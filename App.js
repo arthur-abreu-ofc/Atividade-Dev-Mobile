@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
+
 import Header from './components/Header';
 import ProfileCard from './components/ProfileCard';
 import ActivityCard from './components/ActivityCard';
@@ -44,7 +45,10 @@ export default function App() {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <ScrollView
+      style={styles.container}
+      showsVerticalScrollIndicator={false}
+    >
       <Header title="Sigaa 3.0" />
 
       <ProfileCard
@@ -54,7 +58,9 @@ export default function App() {
         aniversario="19/01/2009"
       />
 
-      <Text style={styles.sectionTitle}>Minhas Atividades:</Text>
+      <Text style={styles.sectionTitle}>
+        Minhas Atividades:
+      </Text>
 
       <View style={styles.colunas}>
         <View style={styles.activities}>
@@ -85,25 +91,27 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#00ccff',
     flex: 1,
+    backgroundColor: '#00ccff',
   },
+
   sectionTitle: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#1e3a8a',
     marginHorizontal: 16,
     marginTop: 20,
-    marginBottom: 10,
+    marginBottom: 12,
   },
+
+  colunas: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 8,
+  },
+
   activities: {
     flex: 1,
     paddingHorizontal: 4,
-    paddingBottom: 32,
-    gap: 16,
-  colunas: {
-    flexDirection: 'row',
-    gap: 2,
-    paddingHorizontal: 8,
   },
 });
